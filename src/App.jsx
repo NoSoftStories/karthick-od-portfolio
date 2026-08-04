@@ -720,9 +720,30 @@ function Footer() {
   );
 }
 
+function Analytics() {
+  React.useEffect(() => {
+    const goatCounterCode = import.meta.env.VITE_GOATCOUNTER_CODE;
+
+    if (!goatCounterCode || document.querySelector('[data-portfolio-analytics="goatcounter"]')) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://gc.zgo.at/count.js';
+    script.dataset.goatcounter = `https://${goatCounterCode}.goatcounter.com/count`;
+    script.dataset.portfolioAnalytics = 'goatcounter';
+
+    document.head.appendChild(script);
+  }, []);
+
+  return null;
+}
+
 export default function App() {
   return (
     <div className="min-h-screen text-slate-100">
+      <Analytics />
       <Header />
       <main>
         <Hero />
