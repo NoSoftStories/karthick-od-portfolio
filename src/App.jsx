@@ -307,14 +307,17 @@ function Hero() {
       <div className="absolute left-0 top-28 h-px w-full bg-gradient-to-r from-transparent via-teal-200/30 to-transparent" />
       <div className="section-shell grid min-h-[calc(100vh-4rem)] items-center gap-12 py-16 lg:grid-cols-[1.02fr_0.98fr]">
         <div className="animate-fade-up">
-          <div className="mb-6 flex w-full items-center justify-center gap-2 overflow-x-auto whitespace-nowrap rounded-md border border-teal-300/24 bg-teal-300/8 px-3 py-1.5 text-[11px] text-teal-100 sm:text-sm">
+          <div className="mb-5 flex w-full items-center justify-start gap-2 overflow-hidden whitespace-nowrap rounded-md border border-teal-300/24 bg-teal-300/8 px-3 py-1.5 text-[11px] text-teal-100 sm:mb-6 sm:justify-center sm:text-sm">
             <span className="size-1.5 rounded-full bg-teal-300 shadow-[0_0_18px_rgba(45,212,191,0.9)]" />
-            Structural Engineer + Computational Engineering Developer + AEC Software Builder
+            <span className="md:hidden">Structural Engineer + AEC Software Developer</span>
+            <span className="hidden md:inline">
+              Structural Engineer + Computational Engineering Developer + AEC Software Builder
+            </span>
           </div>
-          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.06] tracking-normal text-white sm:text-5xl lg:text-7xl lg:leading-[1.02]">
             Engineering tools with the precision of design software and the clarity of SaaS.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
             I'm Karthick O D, a structural engineer and AEC software developer specialising in
             computational design, engineering automation, and digital workflows. I combine
             structural engineering expertise with software development to create practical tools
@@ -338,7 +341,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="glass-panel relative overflow-hidden rounded-lg p-4 shadow-panel animate-[fadeUp_900ms_ease_120ms_both]">
+        <div className="glass-panel relative overflow-hidden rounded-lg p-3 shadow-panel animate-[fadeUp_900ms_ease_120ms_both] sm:p-4">
           <div className="absolute inset-x-0 top-0 h-px overflow-hidden">
             <div className="h-px w-1/3 animate-scan bg-gradient-to-r from-transparent via-teal-200 to-transparent" />
           </div>
@@ -375,7 +378,7 @@ function Hero() {
                   </div>
                 ))}
               </div>
-              <div className="relative min-h-72 overflow-hidden rounded-md border border-white/8 bg-[#070a0f] p-5">
+              <div className="relative min-h-56 overflow-hidden rounded-md border border-white/8 bg-[#070a0f] p-4 sm:min-h-72 sm:p-5">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:28px_28px]" />
                 <svg viewBox="0 0 320 260" className="relative h-full w-full" aria-hidden="true">
                   <path
@@ -442,7 +445,7 @@ function About() {
       </SectionHeading>
       <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="technical-card rounded-lg p-6 sm:p-8">
-          <p className="text-lg leading-8 text-slate-200">
+          <p className="text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
             I have {experienceYears} years of structural engineering experience and a strong focus
             on computational delivery. My work connects design-code understanding, analysis-model
             outputs, API automation, desktop tools, and dashboards into workflows that engineers
@@ -488,9 +491,9 @@ function Skills() {
           A consolidated view of the project types, design scope, codes, tools, and programming
           languages behind my engineering software work.
         </SectionHeading>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {structuralHighlights.map(({ icon: Icon, title, items }) => (
-            <article key={title} className="technical-card rounded-lg p-6">
+            <article key={title} className="technical-card rounded-lg p-5 sm:p-6">
               <div className="mb-5 grid size-11 place-items-center rounded-md bg-teal-300/10 text-teal-200">
                 <Icon size={21} />
               </div>
@@ -531,7 +534,7 @@ function ProjectMedia({ project }) {
   const expectedVideoName = assetName(project.video);
 
   return (
-    <div className="relative h-56 overflow-hidden rounded-md border border-white/10 bg-[#070a0f]">
+    <div className="relative h-44 overflow-hidden rounded-md border border-white/10 bg-[#070a0f] sm:h-56">
       {videoSrc ? (
         <video
           className="h-full w-full object-cover opacity-72 transition duration-500 group-hover:scale-105 group-hover:opacity-90"
@@ -588,7 +591,7 @@ function Projects() {
                 const Icon = project.icon;
 
                 return (
-                  <article key={project.title} className="technical-card group relative overflow-hidden rounded-lg p-4 sm:p-5">
+                  <article key={project.title} className="technical-card group relative overflow-hidden rounded-lg p-3 sm:p-5">
                     <div className={`absolute inset-x-0 top-0 h-44 bg-gradient-to-b ${project.accent} opacity-80`} />
                     <div className="relative">
                       <ProjectMedia project={project} />
@@ -667,7 +670,7 @@ function Contact() {
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.22em] text-teal-200">Contact</p>
-            <h2 className="max-w-2xl text-3xl font-semibold text-white sm:text-4xl">
+            <h2 className="max-w-2xl text-2xl font-semibold text-white sm:text-4xl">
               Hire Karthick to build structural engineering tools that are accurate, auditable, and usable.
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
